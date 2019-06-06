@@ -1,3 +1,4 @@
+setsebool -P httpd_can_network_connect 1
 
 sudo docker pull guacamole/guacd
 sudo docker pull guacamole/guacamole
