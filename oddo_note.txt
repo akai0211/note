@@ -1,0 +1,14 @@
+docker run -d --network="host" \
+-e POSTGRES_USER=odoo_user \
+-e POSTGRES_PASSWORD=Sun09Jun2019 \
+-e POSTGRES_DB=postgres \
+--name db duythu0211/db:1.0
+
+docker run --network="host" \
+-v addons:/mnt/extra-addons \
+-e HOST=localhost \
+-e USER=odoo_user \
+-e PASSWORD=Sun09Jun2019 \
+--name odoo -t duythu0211/odoo:12.0
+
+Open URL: http://<your_odoo_server_IP>:8069 to test.
